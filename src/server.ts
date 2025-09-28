@@ -6,7 +6,7 @@ import rateLimit from "@fastify/rate-limit"
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
-const CORS_ORIGIN = process.env.CORS_ORIGIN || 'https://flip-samurai.vercel.app';
+const CORS_ORIGIN = process.env.CORS_ORIGIN || 'https://flipping-samurai.vercel.app';
 
 const serverOptions = {
     logger: IS_PRODUCTION
