@@ -19,7 +19,7 @@ COPY package*.json ./
 
 RUN npm install --omit=dev
 
-COPY --from=builder /app/dist ./dist
+COPY --from=builder /api/dist ./dist
 
 EXPOSE 3000
 
