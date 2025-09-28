@@ -59,11 +59,17 @@ const shutdown = async () => {
         server.log.info("Server shutting down...");
         await server.close();
     } catch (err) {
-        server.log.error("Error during shutdown:", err);
+        if (err instanceof Error) {
+            server.log.error("Error during shutdown");
+        } else {
+            server.log.error("Unknown error during shutdown");
+        }
     } finally {
         process.exit(0);
     }
 };
+
+
 
 ["SIGINT", "SIGTERM", "SIGTSTP"].forEach((signal) => {
     process.on(signal, shutdown);
